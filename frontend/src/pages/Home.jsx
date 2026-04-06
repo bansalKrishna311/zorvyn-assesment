@@ -54,7 +54,7 @@ function Home() {
       >
         <MotionDiv custom={0} variants={heroChildren} className="mb-7 inline-flex items-center gap-2 rounded-full border border-accent/35 bg-surface/90 px-4 py-2 text-xs font-semibold tracking-[0.14em] text-text-secondary">
           <span className="size-2 rounded-full bg-green shadow-glow-sm" />
-          Finance API v1.0
+          Finance API
         </MotionDiv>
 
         <MotionH1

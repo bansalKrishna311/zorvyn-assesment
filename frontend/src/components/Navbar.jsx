@@ -19,7 +19,7 @@ function Navbar() {
           </span>
           <div className="leading-tight">
             <p className="font-display text-sm font-bold tracking-wide text-text-primary">Zorvyn Finance API</p>
-            <p className="text-xs text-text-secondary">v1.0</p>
+            <p className="text-xs text-text-secondary">Documentation</p>
           </div>
         </NavLink>
 

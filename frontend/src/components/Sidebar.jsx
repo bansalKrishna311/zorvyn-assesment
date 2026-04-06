@@ -11,7 +11,7 @@ function Sidebar({ groups, activeSection, onSelect }) {
           <p className="text-xs text-text-secondary">Reference</p>
         </div>
         <span className="rounded-full border border-accent/40 bg-accent/10 px-2 py-1 text-[10px] font-semibold text-accent">
-          v1.0
+          LIVE
         </span>
       </div>
 
