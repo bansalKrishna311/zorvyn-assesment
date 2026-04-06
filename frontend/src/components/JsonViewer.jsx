@@ -11,22 +11,22 @@ function highlightJson(data) {
     /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\btrue\b|\bfalse\b|\bnull\b|-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?)/g,
     (match) => {
       if (match.endsWith(':')) {
-        return `<span class="text-[#8896b3]">${match}</span>`;
+        return `<span class="text-[#55698c]">${match}</span>`;
       }
 
       if (match === 'true' || match === 'false') {
-        return `<span class="text-[#4f8ef7]">${match}</span>`;
+        return `<span class="text-[#1f6feb]">${match}</span>`;
       }
 
       if (match === 'null') {
-        return `<span class="text-[#f87171]">${match}</span>`;
+        return `<span class="text-[#c0364b]">${match}</span>`;
       }
 
       if (match.startsWith('"')) {
-        return `<span class="text-[#10d9a0]">${match}</span>`;
+        return `<span class="text-[#0f9f6e]">${match}</span>`;
       }
 
-      return `<span class="text-[#f59e0b]">${match}</span>`;
+      return `<span class="text-[#9a6400]">${match}</span>`;
     },
   );
 }

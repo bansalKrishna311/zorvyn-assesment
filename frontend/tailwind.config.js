@@ -7,21 +7,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#080d1a',
-        surface: '#0f1629',
-        'surface-2': '#162033',
-        border: '#1e2d45',
-        'text-primary': '#f0f4ff',
-        'text-secondary': '#8896b3',
-        'text-muted': '#4a5568',
-        accent: '#4f8ef7',
-        'accent-hover': '#6ba3ff',
-        green: '#10d9a0',
-        blue: '#4f8ef7',
-        orange: '#f59e0b',
-        purple: '#a78bfa',
-        red: '#f87171',
-        gold: '#fbbf24',
+        background: '#f3f7ff',
+        surface: '#ffffff',
+        'surface-2': '#edf3ff',
+        border: '#d6e1f5',
+        'text-primary': '#0f1c33',
+        'text-secondary': '#4d6287',
+        'text-muted': '#7d8cab',
+        accent: '#1f6feb',
+        'accent-hover': '#185ed1',
+        green: '#0f9f6e',
+        blue: '#1f6feb',
+        orange: '#c06c00',
+        purple: '#6f42c1',
+        red: '#c0364b',
+        gold: '#a97800',
       },
       fontFamily: {
         display: ['Inter', 'system-ui', 'sans-serif'],
@@ -29,14 +29,14 @@ export default {
         mono: ['Fira Code', 'JetBrains Mono', 'monospace'],
       },
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(135deg, #080d1a 0%, #0d1535 50%, #080d1a 100%)',
-        'accent-glow': 'radial-gradient(circle, rgba(79, 142, 247, 0.1) 0%, rgba(79, 142, 247, 0) 72%)',
+        'hero-gradient': 'linear-gradient(135deg, #f8fbff 0%, #edf4ff 50%, #f7fbff 100%)',
+        'accent-glow': 'radial-gradient(circle, rgba(31, 111, 235, 0.16) 0%, rgba(31, 111, 235, 0) 72%)',
         'grid-pattern':
-          'linear-gradient(rgba(79, 142, 247, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(79, 142, 247, 0.1) 1px, transparent 1px)',
+          'linear-gradient(rgba(31, 111, 235, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(31, 111, 235, 0.12) 1px, transparent 1px)',
       },
       boxShadow: {
-        glow: '0 0 0 1px rgba(107, 163, 255, 0.25), 0 14px 38px rgba(22, 59, 122, 0.32)',
-        'glow-sm': '0 0 0 1px rgba(107, 163, 255, 0.2), 0 8px 24px rgba(22, 59, 122, 0.25)',
+        glow: '0 0 0 1px rgba(31, 111, 235, 0.22), 0 16px 40px rgba(58, 90, 150, 0.18)',
+        'glow-sm': '0 0 0 1px rgba(31, 111, 235, 0.2), 0 10px 24px rgba(58, 90, 150, 0.16)',
       },
       keyframes: {
         'pulse-glow': {
