@@ -1,88 +1,59 @@
-# Zorvyn Assessment
+# Finance Data Processing and Access Control Backend
 
-Full-stack assignment project with:
-- Backend: Express + MongoDB REST API with JWT auth and role-based access
-- Frontend: React documentation and API playground UI
+This is my submission for the Backend Developer Intern assignment.
+I focused on clean backend design, role-based access control, financial record processing, and dashboard summaries.
+The goal was to keep the implementation correct and maintainable without adding unnecessary complexity.
 
-## Submission
+## Submission Links
 - GitHub Repository: https://github.com/bansalKrishna311/zorvyn-assesment
-- Live Project: https://zorvyn-assesment-krishna.vercel.app/
-- Backend API: https://zorvyn-assesment-phi.vercel.app
+- Hosted Assignment (Live): https://zorvyn-assesment-krishna.vercel.app/
+- Live Backend API: https://zorvyn-assesment-phi.vercel.app
 
-## Repository
-- Source code: this Git repository
-- Main folders:
+This assignment is already deployed and can be reviewed directly from the live link above.
 
-```text
-backend/   # Express API
-frontend/  # React app (docs + playground)
-```
-
-## Key Features
-- JWT-based authentication (`/api/auth/login`)
-- Role-based authorization (`admin`, `analyst`, `viewer`)
-- Financial records CRUD and filtering
-- Dashboard analytics endpoints
-- API docs and live request playground in frontend
-
-## Tech Stack
-| Layer | Stack |
+## What I Built and Why?
+| What I implemented | Why I did it |
 |---|---|
-| Frontend | React, Vite, Tailwind CSS, Axios, React Router |
-| Backend | Node.js, Express, Mongoose, JWT, express-validator |
-| Database | MongoDB Atlas |
-| Deployment | Vercel (frontend + backend) |
+| Modular backend layers (app, routes, controllers, models, middlewares, config) | Keeps logic separated and maintainable |
+| User and Record data models in MongoDB/Mongoose | Direct mapping to assignment entities with built-in schema validation |
+| JWT authentication + role-based middleware | Enforces backend-level access control for each endpoint |
+| User, record, and dashboard endpoints | Covers required user management, CRUD, and analytics use cases |
+| Request validation + standard HTTP error codes | Prevents bad input and gives predictable API behavior |
 
-## Local Setup
-### 1) Clone
-```bash
-git clone <your-repo-url>
-cd zorvyn-assesment
-```
-
-### 2) Backend setup
-```bash
-cd backend
-npm install
-```
-
-Create `.env` in `backend/`:
-```dotenv
-MONGO_URI=mongodb+srv://<user>:<password>@<cluster>/<database>?retryWrites=true&w=majority
-JWT_SECRET=replace-with-a-strong-secret
-PORT=5000
-```
-
-Run backend:
-```bash
-npm run dev
-```
-
-### 3) Frontend setup
-```bash
-cd ../frontend
-npm install
-```
-
-Create `.env` in `frontend/`:
-```dotenv
-VITE_API_BASE_URL=http://localhost:5000
-```
-
-Run frontend:
-```bash
-npm run dev
-```
-
-## API Route Summary
-| Module | Base Path | Notes |
+## Requirement Coverage
+| Assignment Requirement | How I Implemented It | Why This Choice |
 |---|---|---|
-| Auth | `/api/auth` | Register / Login |
-| Users | `/api/users` | User management (protected) |
-| Records | `/api/records` | Financial records operations |
-| Dashboard | `/api/dashboard` | Analytics and summaries |
+| User and role management | User model + admin user APIs + role enum + isActive flag | Simple and explicit RBAC foundation |
+| Financial records CRUD | Create, read, update, delete record APIs | Covers complete record lifecycle |
+| Filtering and pagination | Query filters (type/category/date range) + page/limit | Practical for dashboard-style listing |
+| Dashboard summary APIs | Aggregation pipeline for totals, categories, monthly trend + recent activity | Efficient summary generation in DB |
+| Access control logic | auth middleware (JWT + active check) + allowRoles middleware | Clear, reusable authorization policy |
+| Validation and reliability | express-validator for auth/user/record payloads + status codes (400/401/403/404/409/500) | Safer input handling and useful errors |
+| Data persistence | MongoDB Atlas with Mongoose schemas | Fast to build, flexible for finance records |
 
-## Deployment Notes
-- Backend is configured for Vercel serverless under `backend/api/index.js`.
-- Frontend uses `VITE_API_BASE_URL` to target deployed API.
-- For production, set environment variables in Vercel project settings.
+## API Access Snapshot
+| Endpoint Group | Routes | Access |
+|---|---|---|
+| Auth | /api/auth/register, /api/auth/login | Public |
+| Users | /api/users, /api/users/:id | Admin |
+| Profile | /api/users/me | Any authenticated user |
+| Records | /api/records (POST/PATCH/DELETE) | Admin |
+| Records List | /api/records (GET) | Admin, Analyst |
+| Dashboard | /api/dashboard/summary | Admin, Analyst, Viewer |
+
+## Assumptions and Trade-offs
+- Used a single finance records collection and global summary aggregation.
+- Kept hard delete for records to keep logic simple for this assignment.
+- Used JWT access token flow without refresh tokens to keep scope focused.
+- Prioritized backend correctness and clarity over advanced production features.
+
+## Project Structure
+```text
+backend/   Express API (assignment core)
+frontend/  React docs and API playground for evaluation
+```
+
+## Contact
+- Email: bansalkrishna311@gmail.com
+- Phone: +91 9511 834002
+- LinkedIn: https://linkedin.com/in/bansalkrishna311
