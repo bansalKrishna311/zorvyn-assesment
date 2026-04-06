@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  border-color: #1e2d45;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #080d1a;
+  color: #f0f4ff;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(79, 142, 247, 0.09) 0%, transparent 38%),
+    radial-gradient(circle at 90% 0%, rgba(251, 191, 36, 0.05) 0%, transparent 34%),
+    linear-gradient(to bottom, rgba(8, 13, 26, 0.98), rgba(8, 13, 26, 1));
+}
+
+::selection {
+  background: rgba(107, 163, 255, 0.3);
+  color: #f0f4ff;
+}
+
+.font-display {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.bg-grid-pattern {
+  background-size: 42px 42px;
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #4a5568 #0f1629;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #0f1629;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background: #4a5568;
+  }
+}
