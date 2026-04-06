@@ -5,7 +5,7 @@ Full-stack assignment project with:
 - Frontend: React documentation and API playground UI
 
 ## Submission
-- GitHub Repository: <add-your-github-repo-link>
+- GitHub Repository: https://github.com/bansalKrishna311/zorvyn-assesment
 - Live Project: https://zorvyn-assesment-krishna.vercel.app/
 - Backend API: https://zorvyn-assesment-phi.vercel.app
 
