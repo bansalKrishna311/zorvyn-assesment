@@ -1,31 +1,31 @@
 const mongoose = require('mongoose');
 
-let cached = global.__zorvynMongooseCache;
-
-if (!cached) {
-  cached = global.__zorvynMongooseCache = {
-    conn: null,
-    promise: null,
-  };
-}
+let connectPromise = null;
 
 async function connectToDatabase() {
-  if (cached.conn) {
-    return cached.conn;
+  if (mongoose.connection.readyState === 1) {
+    return mongoose.connection;
   }
 
-  if (!process.env.MONGO_URI) {
+  if (connectPromise) {
+    return connectPromise;
+  }
+
+  const mongoUri = process.env.MONGO_URI;
+  if (!mongoUri) {
     throw new Error('MONGO_URI is not configured');
   }
 
-  if (!cached.promise) {
-    cached.promise = mongoose.connect(process.env.MONGO_URI, {
+  connectPromise = mongoose
+    .connect(mongoUri, {
       serverSelectionTimeoutMS: 10000,
+      bufferCommands: false,
+    })
+    .finally(() => {
+      connectPromise = null;
     });
-  }
 
-  cached.conn = await cached.promise;
-  return cached.conn;
+  return connectPromise;
 }
 
 module.exports = connectToDatabase;

@@ -3,12 +3,15 @@ const app = require('./src/app');
 const connectToDatabase = require('./src/config/db');
 const PORT = process.env.PORT || 5000;
 
-connectToDatabase()
-  .then(() => {
+async function startServer() {
+  try {
+    await connectToDatabase();
     console.log('DB Connected');
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-  })
-  .catch((err) => {
+  } catch (err) {
     console.error('DB connection failed', err.message);
     process.exit(1);
-  });
+  }
+}
+
+startServer();
